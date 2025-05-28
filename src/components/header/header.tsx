@@ -6,7 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const [search, setSearch] = useState(false)
     return (
-        <div className={`sticky top-0 w-full h-24 shadow-lg shadow-black/50 flex justify-evenly items-center `}>
+        <div className={`sticky top-0 z-20 w-full h-24 shadow-lg shadow-black/50 flex justify-evenly items-center `}>
             <div className="w-1/5 ">
                 <img className="w-auto h-20 " src={pic1} alt="LogoWebsite" />
             </div>

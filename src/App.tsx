@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className={`relative `}>
+    <div className={`w-full h-auto relative `}>
       <Home/>
     </div>
   );
