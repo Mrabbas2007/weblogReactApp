@@ -1,9 +1,11 @@
+import { Header } from "../../components";
+
 
 
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
+        <div className="w-full h-auto text-white ">
+            <Header />
         </div>
     )
 }

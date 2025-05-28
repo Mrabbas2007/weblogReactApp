@@ -1,0 +1,13 @@
+.ltr {
+    direction: ltr;
+}
+
+.rtl {
+    direction: rtl
+}
+
+.wrapper:hover> :not(:hover) {
+    filter: blur(3px);
+    opacity: .8;
+    transition-duration: 150ms;
+}
