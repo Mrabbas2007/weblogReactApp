@@ -2,13 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: YekanNormal;
+  src: url('./fonts/IRANYekanWebMedium.woff2');
+}
+
+@font-face {
+  font-family: YekanRegular;
+  src: url('./fonts/IRANYekanWebRegular.woff2');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: YekanNormal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #141414;
   direction: rtl;
+}
+
+.YekanR{
+  font-family: YekanRegular;
 }
