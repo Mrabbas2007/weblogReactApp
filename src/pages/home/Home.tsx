@@ -26,7 +26,7 @@ const Home = () => {
 
 
     return (
-        <div className="w-full h-auto text-white ">
+        <div className="w-full h-[110vh] text-white ">
             <Header />
             <LatestArticle items={items} />
         </div>
