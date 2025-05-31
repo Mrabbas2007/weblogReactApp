@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { pic1 } from "../../Images";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
 
@@ -10,7 +10,6 @@ const Header = () => {
 
 
     useEffect(() => {
-        console.log("Hi");
         const scrollHandler = () => {
             if (window.scrollY > 50) {
                 setIsScroll(true)
@@ -52,11 +51,18 @@ const Header = () => {
                     </li>
                 </ul>
             </div>
-            <div className="w-1/5 relative ltr">
-                <span onClick={() => { setSearch(!search) }} className="absolute top-0 left-0 z-20 bg-blue-800 w-8 h-8 rounded-md flex justify-center items-center cursor-pointer ">
-                    <FontAwesomeIcon icon={faSearch} />
+            <div className="w-1/5 flex justify-start items-center ltr text-lg ">
+                <span className="hover:bg-white hover:text-blue-800 hover:rounded-3xl duration-300 bg-blue-800 w-12 h-10 rounded-md flex justify-center items-center cursor-pointer ">
+                    <FontAwesomeIcon icon={faUser} />
                 </span>
-                <input className={`${search ? 'w-full opacity-100' : 'w-8 opacity-0'} h-10 p-2 bg-transparent border-b-2 outline-none duration-300 rtl`} type="text" placeholder="جستجو کنید .." />
+                <div className="relative w-[calc(100%-10px)] m-2">
+                    <span onClick={() => { setSearch(!search) }} className={`${search ? 'bg-white text-blue-800 rounded-3xl' : ''} duration-300 absolute top-0 left-0 z-20 bg-blue-800 w-10 h-10 rounded-md flex justify-center items-center cursor-pointer `}>
+                        <FontAwesomeIcon icon={faSearch} />
+                    </span>
+                    <form>
+                        <input className={`${search ? 'w-full opacity-100 rounded-3xl' : 'w-8 opacity-0'} text-sm h-10 p-2 bg-transparent rounded-md border-2 outline-none duration-300 rtl`} type="text" placeholder=" برای جستجو اینتر را بزنید .. " />
+                    </form>
+                </div>
             </div>
         </div>
     )
