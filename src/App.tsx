@@ -1,11 +1,14 @@
 import React from 'react';
-import {Home} from './pages'
+import { Home } from './pages'
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className={`w-full h-auto relative `}>
-      <Home/>
+    <div className={`relative w-full h-auto `}>
+      <Routes >
+        <Route path={'/'} element={<Home />} />
+      </Routes>
     </div>
   );
 }
