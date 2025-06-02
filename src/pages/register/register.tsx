@@ -6,9 +6,11 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { useState } from "react";
+import { SignIn, SignUp } from "../../components";
 
 const Register = () => {
 
+    const [status, setStatus] = useState(false)
     const [slider, setSlider] = useState([
         {
             'img': pic6,
@@ -49,8 +51,16 @@ const Register = () => {
 
     return (
         <div className={'w-full h-screen flex justify-center items-center '}>
-            <div className="w-3/5 h-4/6 bg-black/50 flex justify-between items-center shadow-lg shadow-[#0f0f0f] overflow-hidden rounded-3xl ">
-                <div className="w-1/2 h-full overflow-hidden ">
+            <div className="w-3/5 h-4/6 bg-[#1c1c1d] flex justify-between items-center shadow-lg shadow-[#0f0f0f] overflow-hidden rounded-3xl ">
+                <div className="relative w-1/2 h-full overflow-hidden ">
+                    <div className={`w-full h-full absolute top-0 ${status ? 'left-0 opacity-100' : 'left-[-100%] opacity-0'} duration-300 `}>
+                        <SignIn />
+                    </div>
+                    <div className={`w-full h-full absolute top-0 ${status ? 'left-[-100%] opacity-0' : 'left-0 opacity-100'} duration-300 `}>
+                        <SignUp />
+                    </div>
+
+                    <span onClick={() => setStatus(!status)} className="w-full absolute left-0 bottom-11 text-center text-white cursor-pointer ">{status ? ' حساب کابری دارید؟ | ورود ' : ' حساب کابری ندارید؟ | ثبت نام  '}</span>
                 </div>
                 <div className="w-1/2 h-full overflow-hidden ">
                     <Swiper {...swiperSettings}>
