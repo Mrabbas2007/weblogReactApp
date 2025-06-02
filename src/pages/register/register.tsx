@@ -1,6 +1,51 @@
-import { pic7 } from "../../Images"
+import { pic6, pic7 } from "../../Images"
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { useState } from "react";
 
 const Register = () => {
+
+    const [slider, setSlider] = useState([
+        {
+            'img': pic6,
+            'title': ' کلیسا در شیراز '
+        },
+        {
+            'img': pic7,
+            'title': ' بادگیر '
+        }
+    ]);
+
+    const swiperSettings = {
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        effect: "fade",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            dynamicBullets: true,
+            clickable: true,
+        },
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 0,
+            modifier: 2,
+            slideShadows: false,
+        },
+        modules: [EffectFade, Navigation, Autoplay, Pagination],
+    };
+
 
     return (
         <div className={'w-full h-screen flex justify-center items-center '}>
@@ -8,7 +53,15 @@ const Register = () => {
                 <div className="w-1/2 h-full overflow-hidden ">
                 </div>
                 <div className="w-1/2 h-full overflow-hidden ">
-                    <img src={pic7} className="w-full h-auto object-cover " alt="" />
+                    <Swiper {...swiperSettings}>
+                        {slider.map((item: any, index: number) => {
+                            return (
+                                <SwiperSlide key={index}>
+                                    <img src={item.img} className="w-full h-auto object-cover " alt={item.title} />
+                                </SwiperSlide>
+                            )
+                        })}
+                    </Swiper>
                 </div>
             </div>
         </div>
