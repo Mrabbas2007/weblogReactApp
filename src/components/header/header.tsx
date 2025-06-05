@@ -30,7 +30,7 @@ const Header = () => {
     }, [])
 
     return (
-        <div className={`${isScroll ? 'shadow-xl backdrop-blur-md rounded-b-xl ' : ''} shadow-black/25 duration-200 sticky top-0 z-20 w-full h-20 flex justify-evenly items-center `}>
+        <div className={`${isScroll ? 'shadow-xl backdrop-blur-md rounded-b-xl ' : ''} shadow-black/25 text-white duration-200 sticky top-0 z-20 w-full h-20 flex justify-evenly items-center `}>
             <div className="w-1/5 hidden max-md:flex justify-center items-center text-2xl  ">
                 <div onClick={() => setBars(false)}
                     className={`absolute ${bars ? ' right-0' : 'right-[-100%]'} top-0 w-full h-screen bg-[#141414]/50 duration-300`}></div>
@@ -58,7 +58,7 @@ const Header = () => {
                         return (
                             <li key={index} className={`relative group w-max text-lg cursor-pointer`}>
                                 <span>{item}</span>
-                                <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-indigo-500 group-hover:w-full"></span>
+                                <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-white group-hover:w-full"></span>
                             </li>
                         )
                     })}
@@ -66,12 +66,12 @@ const Header = () => {
             </div>
             <div className="w-1/5 max-md:w-1/4 flex justify-start items-center ltr text-lg ">
                 <Link to={'/register'} >
-                    <span className="ml-2 bg-white text-blue-800 rounded-3xl duration-300 w-10 h-10 flex justify-center items-center cursor-pointer ">
+                    <span className="ml-2 hover:bg-blue-800 hover:text-white bg-white text-blue-800 rounded-r-none rounded-3xl duration-200 w-12 h-11 flex justify-center items-center cursor-pointer ">
                         <FontAwesomeIcon icon={faUser} />
                     </span>
                 </Link>
                 <span onClick={() => setSearch(true)}
-                    className="ml-2 bg-white text-blue-800 rounded-3xl duration-300 w-10 h-10 flex justify-center items-center cursor-pointer ">
+                    className="ml-1 hover:bg-blue-800 hover:text-white bg-white text-blue-800 rounded-l-none rounded-3xl duration-200 w-12 h-11 flex justify-center items-center cursor-pointer ">
                     <FontAwesomeIcon icon={faSearch} />
                 </span>
                 <div className={`${search ? 'h-screen opacity-100' : 'h-0 opacity-0'} absolute top-0 left-0 w-full bg-black/50 duration-500 flex flex-col justify-center items-center `}>
