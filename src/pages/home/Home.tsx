@@ -1,4 +1,4 @@
-import { Header, LatestArticle } from "../../components";
+import { LatestArticle } from "../../components";
 import { pic2, pic3, pic4, pic5 } from "../../Images";
 import { useState } from "react";
 
@@ -27,7 +27,6 @@ const Home = () => {
 
     return (
         <div className="w-full h-[110vh] text-white ">
-            <Header />
             <LatestArticle items={items} />
         </div>
     )
